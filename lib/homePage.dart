@@ -19,35 +19,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  CarouselSlider carouselSlider = new CarouselSlider(
-    items: <Widget>[
-      new Image.asset(
-        "images/carousel0.JPG",
-        fit: BoxFit.fill,
-        width: 1024.0,
-      ),
-      new Image.asset(
-        "images/carousel1.jpeg",
-        fit: BoxFit.fill,
-        width: 1024.0,
-      ),
-      new Image.asset(
-        "images/carousel2.jpeg",
-        fit: BoxFit.fill,
-        width: 1024.0,
-      ),
-      new Image.asset(
-        "images/carousel3.JPG",
-        fit: BoxFit.fill,
-        width: 1024.0,
-      )
-    ],
-    height: 250.0,
-    autoPlay: true,
-    autoPlayCurve: Curves.easeIn,
-    interval: new Duration(seconds: 4),
-    viewportFraction: 1.0,
-  );
+
 
   void _incrementCounter() {
     setState(() {
@@ -62,6 +34,45 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    CarouselSlider carouselSlider = new CarouselSlider(
+      items: <Widget>[
+        new Container(
+          child: new Image.asset(
+            "images/carousel0.JPG",
+            fit: BoxFit.fill,
+          ),
+        ),
+        new Container(
+          height: MediaQuery.of(context).size.width * 0.68,
+          width: MediaQuery.of(context).size.width,
+          child: new Image.asset(
+            "images/carousel1.jpeg",
+            fit: BoxFit.fill,
+          ),
+        ),
+        new Container(
+          height: MediaQuery.of(context).size.width * 0.68,
+          width: MediaQuery.of(context).size.width,
+          child: new Image.asset(
+            "images/carousel2.jpeg",
+            fit: BoxFit.fill,
+          ),
+        ),
+        new Container(
+          height: MediaQuery.of(context).size.width * 0.68,
+          width: MediaQuery.of(context).size.width,
+          child: new Image.asset(
+            "images/carousel3.JPG",
+            fit: BoxFit.fill,
+          ),
+        )
+      ],
+      height: MediaQuery.of(context).size.width * 0.68,
+      autoPlay: true,
+      autoPlayCurve: Curves.easeIn,
+      interval: new Duration(seconds: 4),
+      viewportFraction: 1.0,
+    );
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(widget.title),
